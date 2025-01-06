@@ -1,0 +1,25 @@
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card-img-top {
+  object-fit: cover;
+  height: 200px;
+}
+.badge {
+  font-size: 12px;
+}
+
+/* Sidebar modal */
+#postModal {
+  transform: translateX(100%); /* Initially hidden off-screen */
+  transition: transform 0.3s ease-in-out;
+}
+
+#postModal.flex {
+  transform: translateX(0); /* Slide in from the right */
+}
