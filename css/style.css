@@ -14,12 +14,43 @@
   font-size: 12px;
 }
 
-/* Sidebar modal */
 #postModal {
-  transform: translateX(100%); /* Initially hidden off-screen */
-  transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 350px;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1050;
+  overflow-y: auto;
+  display: none; /* Hidden by default */
 }
 
 #postModal.flex {
-  transform: translateX(0); /* Slide in from the right */
+  display: flex; /* Show when active */
+  flex-direction: column;
+}
+
+.modal-header {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-body {
+  padding: 1rem;
+  flex: 1;
+}
+
+.modal-footer {
+  padding: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+/* Ensure the main product list does not overlap with the cart */
+body.modal-open {
+  overflow: hidden; /* Prevent background scrolling */
 }

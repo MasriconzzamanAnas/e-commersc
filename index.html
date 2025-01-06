@@ -97,34 +97,21 @@
           </div>                
           <!-- cart option -->
           
-          <div id="postModal" class="fixed top-0 right-0 h-full w-1/3 bg-white hidden shadow-lg z-50">
-            <div class="p-6">
-              <!-- Header -->
-              <div class="flex justify-between items-center border-b pb-4">
-                <h2 class="text-xl font-bold">Cart Details</h2>
-                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                  </svg>
-                </button>
-              </div>
-          
-              <!-- Product Details -->
-              <div id="cartItems" class="mt-6">
-                <!-- Dynamic product details will appear here -->
-              </div>
-          
-              <!-- Cart Summary -->
-              <div class="mt-6 border-t pt-4">
-                <p class="flex justify-between text-gray-700">
-                  <span>Subtotal:</span>
-                  <strong id="subtotal">$0.00</strong>
-                </p>
-              </div>
+          <div id="postModal">
+            <div class="modal-header">
+              <h5 class="modal-title">Cart Details</h5>
+              <button type="button" onclick="closeModal()" class="btn-close"></button>
             </div>
-          </div>
-               
-        </div> 
+            <div id="cartItems" class="modal-body">
+              <!-- Cart items will appear here -->
+            </div>
+            <div class="modal-footer">
+              <p class="d-flex justify-content-between">
+                <span>Subtotal:</span>
+                <strong id="subtotal">$0.00</strong>
+              </p>
+            </div>
+          </div> 
       </div>     
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
