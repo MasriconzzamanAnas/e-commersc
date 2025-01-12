@@ -106,8 +106,13 @@
               <!-- Cart items will appear here -->
             </div>
             <div class="modal-footer">
+              <div class="promocode d-flex justify-content-between">
+                <label for="Promocode">Promocode:</label>
+                <input type="text" id="promocode" name="promocode" class="form-control"/>
+                <button type="button" onclick="applyPromocode()" class="btn btn-primary">Apply</button>
+              </div>
               <p class="d-flex justify-content-between">
-                <span>Subtotal:</span>
+                <span>Total:</span>
                 <strong id="subtotal">$0.00</strong>
               </p>
             </div>

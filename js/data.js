@@ -103,10 +103,11 @@ function addToCart(id, title, price, thumbnail) {
   openModal();
 }
 
+
+const subtotalElement = document.getElementById("subtotal");
 // Update the cart sidebar
 function updateCartUI() {
   const cartItemsContainer = document.getElementById("cartItems");
-  const subtotalElement = document.getElementById("subtotal");
 
   // Check if elements exist
   if (!cartItemsContainer || !subtotalElement) {
@@ -137,9 +138,36 @@ function updateCartUI() {
       </div>`;
   });
 
-  // Update subtotal
-  subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+  // Update subtotal 
+  subtotalElement.textContent = `${subtotal.toFixed(2)}`;
+  
 }
+
+function applyPromocode() {
+  const promoCodeInput = document.getElementById("promocode").value;
+  const promoCode = "ostad10";
+  const promocode = "ostad5"
+  
+  //const userPaymentElement = document.getElementById("user-payment");
+  const totalPrice = parseInt(subtotalElement.textContent);
+
+  if (promoCodeInput === promocode) {
+    const discountedPrice = totalPrice - totalPrice * 0.05; // 10% discount
+    subtotalElement.textContent = discountedPrice.toFixed(2); // Update total price
+    //userPaymentElement.textContent = discountedPrice.toFixed(2);  Update user payment
+    //alert("Promo code applied successfully!");
+  } else if(promoCodeInput === promoCode) {
+    const discountedPrice = totalPrice - totalPrice * 0.10; // 5% discount
+    subtotalElement.textContent = discountedPrice.toFixed(2); // Update total price
+    //userPaymentElement.textContent = discountedPrice.toFixed(2);  Update user payment
+    //alert("Promo code applied successfully!");
+    
+  } else {
+    alert("Invalid promo code.");
+  }
+}  
+
+/** */
 
 // Update product quantity
 function updateQuantity(id, change) {
@@ -192,6 +220,8 @@ document.getElementById("postModal")?.addEventListener("click", function (e) {
     closeModal();
   }
 });
+
+
 
 
 /** // Close modal when clicking outside

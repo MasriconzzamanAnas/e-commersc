@@ -54,3 +54,7 @@
 body.modal-open {
   overflow: hidden; /* Prevent background scrolling */
 }
+.promocode{
+  width: 100%;
+  height: 40px;
+}
